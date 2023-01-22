@@ -1,0 +1,70 @@
+LAMMPS (22 Dec 2022)
+units 	metal
+dimension 	3
+boundary 	p p p
+atom_style 	atomic
+read_data 	bulk.lmp
+Reading data file ...
+  triclinic box = (0 0 0) to (15.337146 13.282358 12.522727) with tilt (7.668573 7.668573 4.4274527)
+WARNING: Triclinic box skew is large. LAMMPS will run inefficiently. (../domain.cpp:220)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  215 atoms
+  read_data CPU = 0.002 seconds
+include 	potential.inp
+pair_style 	pace
+ACE version: 2022.6.27
+Recursive evaluator is used
+pair_coeff 	* * copper.yace Cu
+Loading copper.yace
+Total number of basis functions
+	Cu: 6 (r=1) 23 (r>1)
+Mapping LAMMPS atom type #1(Cu) -> ACE species type #0
+#pair_style hybrid/overlay pace table linear 6901
+#pair_coeff * * pace copper.yace Cu
+#pair_coeff 1 1 table copper.table Cu_Cu
+variable dumptime 	equal 100
+variable thermotime 	equal 100
+min_style 	cg
+
+compute peratom all pe/atom
+dump 1 	all custom ${dumptime} dump.out id type xsu ysu zsu fx fy fz vx vy vz
+dump 1 	all custom 100 dump.out id type xsu ysu zsu fx fy fz vx vy vz
+dump_modify 1 	sort id format line "%d %d %20.15g %20.15g %20.15g %20.15g %20.15g %20.15g %20.15g %20.15g %20.15g"
+
+dump 2 all custom ${dumptime} dump_e_atom.out id type xsu ysu zsu c_peratom
+dump 2 all custom 100 dump_e_atom.out id type xsu ysu zsu c_peratom
+dump_modify 2 sort id format line "%d %d %20.15g %20.15g %20.15g %20.15g"
+
+dump 3 all custom 100 dump3_*.out id type x y z
+dump_modify 3 sort id
+
+thermo_style 	custom step temp pe etotal pxx pxy pxz pyy pyz pzz vol
+thermo_modify 	format float %20.15g
+thermo 	${thermotime}
+thermo 	100
+#fix         br all box/relax x 10. y 10. z 10.
+minimize 	0.0 0.0001 100000 10000000
+Neighbor list info ...
+  update: every = 1 steps, delay = 0 steps, check = yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 7.5
+  ghost atom cutoff = 7.5
+  binsize = 3.75, bins = 9 5 4
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair pace, perpetual
+      attributes: full, newton on
+      pair build: full/bin/atomonly
+      stencil: full/bin/3d
+      bin: standard
+Per MPI rank memory allocation (min/avg/max) = 8.362 | 8.362 | 8.362 Mbytes
+   Step          Temp          PotEng         TotEng          Pxx            Pxy            Pxz            Pyy            Pyz            Pzz           Volume    
+         0                     0      8437.5500380883      8437.5500380883     6094539.04575807 3.17721526716521e-08 5.43849467480493e-08     6094539.04575979 2.94683564362334e-06     6094539.04575888     2551.04820225001
+       100                     0    -165036.716328043    -165036.716328043     40565384.1179487    0.660330493859655     1.00743455693276     40565385.4381763   -0.818364579180718     40565407.1539791     2551.04820225001
+       200                     0    -172286.317141093    -172286.317141093     41319718.0510033    -191953.035582326     274822.581323449     41102278.5284635    -156556.928271652     41225896.3489771     2551.04820225001
+       300                     0    -178904.373760948    -178904.373760948     12782152.4358784     1305659.36641427    -1756583.07563424     20313394.5494708      4624539.6301112     14162739.2456605     2551.04820225001
+       400                     0    -1301602.69762988    -1301602.69762988    -21501985.6821974    -9817877.18529565    -19329436.6678016    -53785331.9841667    -53112616.8756824    -61076140.1199969     2551.04820225001
+       500                     0     -1361463.9986377     -1361463.9986377    -3468199.64811933     5387307.52751272     2349490.60843117    -32898066.2352174    -30936591.8921423    -23619942.0805876     2551.04820225001
+       600                     0    -1387790.01172025    -1387790.01172025    -7618469.95027795     3018822.58887637     20861397.4528194    -23429827.1766036    -28101552.3886753    -30378245.8097115     2551.04820225001
+       700                     0    -1405297.76493677    -1405297.76493677     -3323642.2460699     1144916.81940497     21707366.5330445    -11137398.6429349    -23839546.1315027    -26203713.6241008     2551.04820225001
+       800      
