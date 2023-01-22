@@ -1,0 +1,6 @@
+pair_style 	pace	
+#pair_style pace product chunksize 2048
+pair_coeff 	* * Cu-PBE-core-rep.ace Cu
+#pair_style hybrid/overlay pace table linear 6901
+#pair_coeff * * pace copper.yace Cu
+#pair_coeff 1 1 table copper.table Cu_Cu
