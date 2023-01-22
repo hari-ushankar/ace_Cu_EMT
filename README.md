@@ -9,4 +9,4 @@ Repo contains codes for three essential steps
 - (03-1 step) Check if your local LAMMPS installation has ML-PACE package[https://docs.lammps.org/Packages_details.html#pkg-ml-pace] installed properly.
 - (this does not work for now..) use the .yace file to run a simple LAMMPS minimization of monovacancy in Cu
 
-Each folder has a `bash` script that allows one to run the script for each step.
+Each folder has a `bash` script that allows one to run each step.
