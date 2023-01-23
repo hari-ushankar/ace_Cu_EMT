@@ -1,3 +1,4 @@
 
 *.out
 03-2-use-LAMMPS-with-trained-pot/lmp_serial
+03-2-use-LAMMPS-with-trained-pot/bkCu/lmp_serial
