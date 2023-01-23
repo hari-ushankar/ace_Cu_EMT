@@ -10,7 +10,7 @@ WARNING: Triclinic box skew is large. LAMMPS will run inefficiently. (../domain.
   1 by 1 by 1 MPI processor grid
   reading atoms ...
   215 atoms
-  read_data CPU = 0.001 seconds
+  read_data CPU = 0.002 seconds
 include 	potential.inp
 #pair_style 	pace
 #pair_coeff 	* * copper.yace Cu
@@ -69,9 +69,9 @@ Per MPI rank memory allocation (min/avg/max) = 9.353 | 9.353 | 9.353 Mbytes
    Step          Temp          PotEng         TotEng          Pxx            Pxy            Pxz            Pyy            Pyz            Pzz           Volume    
          0                     0    0.395690707715858    0.395690707715858    -29598.2983068007 -5.61530181236574e-10 -1.05110194232772e-09    -29598.2983068992 -5.93319399628508e-08    -29598.2983068477     2551.04820225001
         12                     0   -0.569788658806942   -0.569788658806942    -31502.9323173391 2.09181453911119e-11 -3.40268498362087e-11    -31502.9323174335 -5.58481448704759e-08     -31502.932317387     2551.04820225001
-Loop time of 0.210323 on 1 procs for 12 steps with 215 atoms
+Loop time of 0.226322 on 1 procs for 12 steps with 215 atoms
 
-99.8% CPU use with 1 MPI tasks x no OpenMP threads
+99.5% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = linesearch alpha is zero
@@ -85,12 +85,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.20826    | 0.20826    | 0.20826    |   0.0 | 99.02
+Pair    | 0.2241     | 0.2241     | 0.2241     |   0.0 | 99.02
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 0.00056578 | 0.00056578 | 0.00056578 |   0.0 |  0.27
+Comm    | 0.00053361 | 0.00053361 | 0.00053361 |   0.0 |  0.24
 Output  | 0          | 0          | 0          |   0.0 |  0.00
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.001494   |            |       |  0.71
+Other   |            | 0.001685   |            |       |  0.74
 
 Nlocal:            215 ave         215 max         215 min
 Histogram: 1 0 0 0 0 0 0 0 0 0

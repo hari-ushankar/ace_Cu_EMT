@@ -1,6 +1,6 @@
 ##
 using ACE1pack
-data = JuLIP.read_extxyz("master_add_surfaces.xyz")
+data = JuLIP.read_extxyz("master_add_surfaces_GBs.xyz")
 #data = JuLIP.read_extxyz("/home/hari/projects/developing_ACE/ACE1project/vacancy_NEB/lammps_relax_vac/acefit_Cu_EMT/master.xyz")
 r0 = 2.55
 ACE_B = ace_basis(species = [:Cu],
