@@ -108,3 +108,56 @@ with open("master.xyz", "w") as outfile:
     for fname in filenames:
         with open(fname) as infile:
             outfile.write(infile.read())
+## add in fcc111 surfaces of different sizes in training data
+from ase.build import fcc111
+slab = fcc111('Cu', size=(3,3,3), vacuum=10.0)
+sname = "fcc11_3_3_3_vac10"
+
+slab.calc = EMT()
+optimizer = MDMin(slab)
+optimizer.run()
+slab.info = {"config_type": sname}
+write_extxyz(fileobj="{}.xyz".format(sname), images=slab)
+filenames = ["{}.xyz".format(sname)]
+with open("master.xyz", "a") as outfile:
+    for fname in filenames:
+        with open(fname) as infile:
+            outfile.write(infile.read())
+
+slab = fcc111('Cu', size=(2,2,2), vacuum=10.0)
+sname = "fcc11_2_2_2_vac10"
+slab.calc = EMT()
+optimizer = MDMin(slab)
+optimizer.run()
+slab.info = {"config_type": sname}
+write_extxyz(fileobj="{}.xyz".format(sname), images=slab)
+filenames = ["{}.xyz".format(sname)]
+with open("master.xyz", "a") as outfile:
+    for fname in filenames:
+        with open(fname) as infile:
+            outfile.write(infile.read())
+
+slab = fcc111('Cu', size=(4,4,4), vacuum=10.0)
+sname = "fcc11_4_4_4_vac10"
+slab.calc = EMT()
+optimizer = MDMin(slab)
+optimizer.run()
+slab.info = {"config_type": sname}
+write_extxyz(fileobj="{}.xyz".format(sname), images=slab)
+filenames = ["{}.xyz".format(sname)]
+with open("master.xyz", "a") as outfile:
+    for fname in filenames:
+        with open(fname) as infile:
+            outfile.write(infile.read())
+slab = fcc111('Cu', size=(5,5,5), vacuum=10.0)
+sname = "fcc11_5_5_5_vac10"
+slab.calc = EMT()
+optimizer = MDMin(slab)
+optimizer.run()
+slab.info = {"config_type": sname}
+write_extxyz(fileobj="{}.xyz".format(sname), images=slab)
+filenames = ["{}.xyz".format(sname)]
+with open("master.xyz", "a") as outfile:
+    for fname in filenames:
+        with open(fname) as infile:
+            outfile.write(infile.read())
