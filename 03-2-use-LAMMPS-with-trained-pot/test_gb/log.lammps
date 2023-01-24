@@ -3,14 +3,14 @@ units 	metal
 dimension 	3
 boundary 	p p p
 atom_style 	atomic
-read_data 	bulk.lmp
+read_data 	bkCu.lmp
 Reading data file ...
-  triclinic box = (0 0 0) to (15.337146 13.282358 12.522727) with tilt (7.668573 7.668573 4.4274527)
+  triclinic box = (0 0 0) to (15.231078 13.190501 12.436123) with tilt (7.615539 7.615539 4.3968335)
 WARNING: Triclinic box skew is large. LAMMPS will run inefficiently. (../domain.cpp:220)
   1 by 1 by 1 MPI processor grid
   reading atoms ...
-  215 atoms
-  read_data CPU = 0.001 seconds
+  216 atoms
+  read_data CPU = 0.002 seconds
 include 	potential.inp
 #pair_style 	pace
 #pair_coeff 	* * copper.yace Cu
@@ -65,44 +65,44 @@ Neighbor list info ...
       pair build: half/bin/newton/tri
       stencil: half/bin/3d/tri
       bin: standard
-Per MPI rank memory allocation (min/avg/max) = 9.353 | 9.353 | 9.353 Mbytes
+Per MPI rank memory allocation (min/avg/max) = 9.339 | 9.339 | 9.339 Mbytes
    Step          Temp          PotEng         TotEng          Pxx            Pxy            Pxz            Pyy            Pyz            Pzz           Volume    
-         0                     0    -2.49167741870357    -2.49167741870357     48378.6022690287 -4.13917801926627e-10 -8.56214554433863e-10     48378.6022689166 -6.18740873086569e-08     48378.6022689754     2551.04820225001
-        13                     0    -3.36392367061273    -3.36392367061273     47498.2256575052 1.10395512301593e-10 1.69785613424525e-11     47498.2256573988 -5.78102320445865e-08     47498.2256574515     2551.04820225001
-Loop time of 0.205606 on 1 procs for 13 steps with 215 atoms
+         0                     0    -1.48361113041003    -1.48361113041003     109439.453185148 2.44053175849052e-10 -4.49913067292387e-10     109439.453185149 4.78554086990131e-10     109439.453185148     2498.48609626435
+         1                     0    -1.48361113040946    -1.48361113040946     109439.453185149 2.82853928718869e-10 -2.85587693730424e-10     109439.453185149 6.47559780452119e-10     109439.453185148     2498.48609626435
+Loop time of 0.0277654 on 1 procs for 1 steps with 216 atoms
 
-99.3% CPU use with 1 MPI tasks x no OpenMP threads
+99.7% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
-  Stopping criterion = linesearch alpha is zero
+  Stopping criterion = force tolerance
   Energy initial, next-to-last, final = 
-     -2.49167741870357  -3.36392367061273  -3.36392367061273
-  Force two-norm initial, final = 5.4793992 0.00075332255
-  Force max component initial, final = 1.3906285 0.00012121542
-  Final line search alpha, max atom move = 0.015625 1.893991e-06
-  Iterations, force evaluations = 13 37
+     -1.48361113041003  -1.48361113041003  -1.48361113040946
+  Force two-norm initial, final = 5.1407119e-13 2.7265152e-13
+  Force max component initial, final = 1.5676349e-13 4.9293902e-14
+  Final line search alpha, max atom move = 1 4.9293902e-14
+  Iterations, force evaluations = 1 2
 
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.20244    | 0.20244    | 0.20244    |   0.0 | 98.46
+Pair    | 0.02537    | 0.02537    | 0.02537    |   0.0 | 91.37
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 0.00043399 | 0.00043399 | 0.00043399 |   0.0 |  0.21
+Comm    | 4.6817e-05 | 4.6817e-05 | 4.6817e-05 |   0.0 |  0.17
 Output  | 0          | 0          | 0          |   0.0 |  0.00
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.002733   |            |       |  1.33
+Other   |            | 0.002349   |            |       |  8.46
 
-Nlocal:            215 ave         215 max         215 min
+Nlocal:            216 ave         216 max         216 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
-Nghost:           3133 ave        3133 max        3133 min
+Nghost:           3159 ave        3159 max        3159 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
-Neighs:          26536 ave       26536 max       26536 min
+Neighs:          26784 ave       26784 max       26784 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
-FullNghs:        29960 ave       29960 max       29960 min
+FullNghs:        30240 ave       30240 max       30240 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
 
-Total # of neighbors = 29960
-Ave neighs/atom = 139.34884
+Total # of neighbors = 30240
+Ave neighs/atom = 140
 Neighbor list builds = 0
 Dangerous builds = 0
 #unfix		br
