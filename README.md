@@ -1,4 +1,4 @@
-# ace_Cu_EMT_vacancy
+# ace_Cu_EMT_dataset_training
 
 Repo contains codes for three essential steps
 1- create training data; 
