@@ -1,7 +1,6 @@
 ##
 using ACE1pack
 data = JuLIP.read_extxyz("master_add_surfaces_GBs.xyz")
-#data = JuLIP.read_extxyz("/home/hari/projects/developing_ACE/ACE1project/vacancy_NEB/lammps_relax_vac/acefit_Cu_EMT/master.xyz")
 r0 = 2.55
 ACE_B = ace_basis(species = [:Cu],
                   N = 3,
@@ -57,5 +56,5 @@ potential = JuLIP.MLIPs.SumIP(Vref, JuLIP.MLIPs.combine(B, results["C"]))
 @info("Training Error Table")
 ACE1pack.linear_errors(train, potential);
 
-save_dict("./copper.json", Dict("IP" => write_dict(potential)))
-ACE1pack.ExportMulti.export_ACE("./copper.yace", potential; export_pairpot_as_table=true)
+save_dict("./copper_gb.json", Dict("IP" => write_dict(potential)))
+ACE1pack.ExportMulti.export_ACE("./copper_gb.yace", potential; export_pairpot_as_table=true)

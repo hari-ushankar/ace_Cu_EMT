@@ -9,11 +9,11 @@ variable thermotime 	equal 100
 min_style 	cg 	
 
 compute peratom all pe/atom 
-dump 1 	all custom ${dumptime} dump.out id type xsu ysu zsu fx fy fz vx vy vz
-dump_modify 1 	sort id format line "%d %d %20.15g %20.15g %20.15g %20.15g %20.15g %20.15g %20.15g %20.15g %20.15g" 	
+#dump 1 	all custom ${dumptime} dump.out id type xsu ysu zsu fx fy fz vx vy vz
+#dump_modify 1 	sort id format line "%d %d %20.15g %20.15g %20.15g %20.15g %20.15g %20.15g %20.15g %20.15g %20.15g" 	
 
-dump 2 all custom ${dumptime} dump_e_atom.out id type xsu ysu zsu c_peratom
-dump_modify 2 sort id format line "%d %d %20.15g %20.15g %20.15g %20.15g"
+#dump 2 all custom ${dumptime} dump_e_atom.out id type xsu ysu zsu c_peratom
+#dump_modify 2 sort id format line "%d %d %20.15g %20.15g %20.15g %20.15g"
 
 dump 3 all custom 100 dump3_*.out id type x y z
 dump_modify 3 sort id
