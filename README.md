@@ -12,6 +12,7 @@ Repo contains codes for three essential steps
   bulk (4x4x4 reps of unit cell), 
   surfaces: fcc111 of reps of 2, 3, 4, 5 ,  
   isolated atom,
+  clusters: icosahedron, octahedron
   twist sigma17 (001) GB
   tilt sigma17(014), sigma5(013) GB
   
