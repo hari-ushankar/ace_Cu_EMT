@@ -28,6 +28,6 @@ Repo contains codes for three essential steps
   Note: need to use the latest version of LAMMPS and install 2023 version of ML-PACE library;
   TODO: 
 - Need to think about now adding more structures in here. Maybe GBs and dislocations?
-- ~~Use LAMMPS-python interface to run minimizations and output the final structures to .extxyz format~~
 
+Additional info: Build LAMMPS (22 Dec 2022 version) using `make` and install additional packages such as `ML-PACE`, `PYTHON` and `MANYBODY` to run ACE and EAM in LAMMPS via Python.
 Each folder has a `bash` script that allows one to run python or Julia codes. 
