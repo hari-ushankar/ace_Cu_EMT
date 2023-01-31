@@ -1,5 +1,3 @@
-#pair_style 	pace	
-#pair_coeff 	* * copper.yace Cu
 pair_style hybrid/overlay pace table linear 6901
 pair_coeff * * pace copper_surf.yace Cu
 pair_coeff 1 1 table copper_surf.table Cu_Cu

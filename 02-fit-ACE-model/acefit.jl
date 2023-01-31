@@ -17,9 +17,18 @@ Vref = OneBody(:Cu => 3.51)
 weights = Dict(
         "bulk_Cu" => Dict("E" => 20.0, "F" => 5.0 , "V" => 3.0 ),
         "bulk_vac_images" => Dict("E" => 60.0, "F" => 15.0 , "V" => 10.0 ),
-        "isolated_atom" => Dict("E" => 10.0,"F" => 5.0,"V" => 2.0));
+        "isolated_atom" => Dict("E" => 10.0,"F" => 5.0,"V" => 2.0),
+        "fcc111_3_3_3_vac10" => Dict("E" => 20.0,"F" => 5.0,"V" => 2.0),
+        "fcc111_2_2_2_vac10" => Dict("E" => 20.0,"F" => 5.0,"V" => 2.0),
+        "fcc111_4_4_4_vac10" => Dict("E" => 20.0,"F" => 5.0,"V" => 2.0),
+        "fcc111_5_5_5_vac10" => Dict("E" => 20.0,"F" => 5.0,"V" => 2.0),
+        "twist_001" => Dict("E" => 40.0,"F" => 5.0,"V" => 2.0),
+        "tilt_GB_140" => Dict("E" => 40.0,"F" => 5.0,"V" => 2.0),
+        "tilt_GB_130" => Dict("E" => 40.0,"F" => 5.0,"V" => 2.0),
+        "tilt_GB_120" => Dict("E" => 40.0,"F" => 5.0,"V" => 2.0)
+        );
 ##
-train = [ACE1pack.AtomsData(t,"energy","force","stress",weights,Vref) for t in data]
+train = [ACE1pack.AtomsData(t,"energy","forces","stress",weights,Vref) for t in data]
 A, Y, W = ACEfit.linear_assemble(train, B);
 ##
 solver_type = :lsqr

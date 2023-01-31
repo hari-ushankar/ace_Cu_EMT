@@ -50,7 +50,7 @@ functions:
   0:
     - rank: 1
       ctildes:
-        - 0.00276764030695425
+        - 0.002438733919728406
       num_ms_combs: 1
       ndensity: 1
       ns:
@@ -64,7 +64,7 @@ functions:
         - 0
     - rank: 1
       ctildes:
-        - 0.0028326677442995934
+        - 0.004267838218941146
       num_ms_combs: 1
       ndensity: 1
       ns:
@@ -78,7 +78,7 @@ functions:
         - 0
     - rank: 1
       ctildes:
-        - -0.002158707139067242
+        - -0.002711943142774532
       num_ms_combs: 1
       ndensity: 1
       ns:
@@ -92,7 +92,7 @@ functions:
         - 0
     - rank: 1
       ctildes:
-        - -0.003832001006297888
+        - -0.0037307140204260844
       num_ms_combs: 1
       ndensity: 1
       ns:
@@ -106,7 +106,7 @@ functions:
         - 0
     - rank: 1
       ctildes:
-        - 0.00015493156576190707
+        - 0.0008666872073368098
       num_ms_combs: 1
       ndensity: 1
       ns:
@@ -120,7 +120,7 @@ functions:
         - 0
     - rank: 1
       ctildes:
-        - -0.00030848471941399174
+        - -0.000846253306323233
       num_ms_combs: 1
       ndensity: 1
       ns:
@@ -134,7 +134,7 @@ functions:
         - 0
     - rank: 2
       ctildes:
-        - 0.0021782267835486206
+        - 0.002127588731229732
       num_ms_combs: 1
       ndensity: 1
       ns:
@@ -152,7 +152,7 @@ functions:
         - 0
     - rank: 2
       ctildes:
-        - -0.0010891133917743103
+        - -0.001063794365614866
       num_ms_combs: 1
       ndensity: 1
       ns:
@@ -170,7 +170,7 @@ functions:
         - 0
     - rank: 2
       ctildes:
-        - -0.004774273347248921
+        - -0.00521488476498488
       num_ms_combs: 1
       ndensity: 1
       ns:
@@ -188,7 +188,7 @@ functions:
         - 0
     - rank: 2
       ctildes:
-        - -0.0008184619976293336
+        - -0.0019595266847892588
       num_ms_combs: 1
       ndensity: 1
       ns:
@@ -206,7 +206,7 @@ functions:
         - 0
     - rank: 2
       ctildes:
-        - 0.0015749454689493467
+        - 0.0016087785090167308
       num_ms_combs: 1
       ndensity: 1
       ns:
@@ -224,7 +224,7 @@ functions:
         - 0
     - rank: 2
       ctildes:
-        - -0.0006839857973396696
+        - -0.0008638595589244024
       num_ms_combs: 1
       ndensity: 1
       ns:
@@ -242,7 +242,7 @@ functions:
         - 0
     - rank: 2
       ctildes:
-        - 0.001681894038212824
+        - 0.0013847615907663447
       num_ms_combs: 1
       ndensity: 1
       ns:
@@ -260,7 +260,7 @@ functions:
         - 0
     - rank: 2
       ctildes:
-        - 0.0001359478389335634
+        - 0.00012379534479903115
       num_ms_combs: 1
       ndensity: 1
       ns:
@@ -278,7 +278,7 @@ functions:
         - 0
     - rank: 2
       ctildes:
-        - -0.0001359478389335634
+        - -0.00012379534479903115
       num_ms_combs: 1
       ndensity: 1
       ns:
@@ -296,7 +296,7 @@ functions:
         - 0
     - rank: 2
       ctildes:
-        - 0.0001359478389335634
+        - 0.00012379534479903115
       num_ms_combs: 1
       ndensity: 1
       ns:
@@ -314,7 +314,7 @@ functions:
         - 0
     - rank: 2
       ctildes:
-        - 0.0006622746606597477
+        - 0.0022229397913601403
       num_ms_combs: 1
       ndensity: 1
       ns:
@@ -332,7 +332,7 @@ functions:
         - 0
     - rank: 2
       ctildes:
-        - -0.0007166976767406789
+        - -0.0011489238522736666
       num_ms_combs: 1
       ndensity: 1
       ns:
@@ -350,7 +350,7 @@ functions:
         - 0
     - rank: 2
       ctildes:
-        - -0.0020110891643044006
+        - -0.001556433939009949
       num_ms_combs: 1
       ndensity: 1
       ns:
@@ -368,7 +368,7 @@ functions:
         - 0
     - rank: 2
       ctildes:
-        - 0.00038108905784121975
+        - 0.0008075964927458147
       num_ms_combs: 1
       ndensity: 1
       ns:
@@ -386,7 +386,7 @@ functions:
         - 0
     - rank: 3
       ctildes:
-        - 6.895770668750155e-5
+        - -4.216613803682361e-5
       num_ms_combs: 1
       ndensity: 1
       ns:
@@ -408,7 +408,7 @@ functions:
         - 0
     - rank: 3
       ctildes:
-        - 0.0004869785014740597
+        - 0.0005497807034063429
       num_ms_combs: 1
       ndensity: 1
       ns:
@@ -430,7 +430,7 @@ functions:
         - 0
     - rank: 3
       ctildes:
-        - 0.00033482546317925045
+        - 0.00013534605008514336
       num_ms_combs: 1
       ndensity: 1
       ns:
@@ -452,7 +452,7 @@ functions:
         - 0
     - rank: 3
       ctildes:
-        - -0.00026918590248348797
+        - -0.00018499712289269773
       num_ms_combs: 1
       ndensity: 1
       ns:
@@ -474,7 +474,7 @@ functions:
         - 0
     - rank: 3
       ctildes:
-        - -0.00010233308900559925
+        - -0.00015024363194325144
       num_ms_combs: 1
       ndensity: 1
       ns:
@@ -496,7 +496,7 @@ functions:
         - 0
     - rank: 3
       ctildes:
-        - 0.0004971722329138108
+        - 0.00020819870049187353
       num_ms_combs: 1
       ndensity: 1
       ns:
@@ -518,7 +518,7 @@ functions:
         - 0
     - rank: 3
       ctildes:
-        - 0.002526047426518444
+        - 0.002528725613268187
       num_ms_combs: 1
       ndensity: 1
       ns:
@@ -540,7 +540,7 @@ functions:
         - 0
     - rank: 3
       ctildes:
-        - -0.0012630237132592215
+        - -0.0012643628066340933
       num_ms_combs: 1
       ndensity: 1
       ns:
@@ -562,7 +562,7 @@ functions:
         - 0
     - rank: 3
       ctildes:
-        - -0.0003976044014102351
+        - 5.611614985327535e-5
       num_ms_combs: 1
       ndensity: 1
       ns:
