@@ -2,17 +2,16 @@
 
 import numpy as np
 from ase import Atoms
-from ase.io.trajectory import Trajectory
-from ase.calculators.emt import EMT
-from ase.io import read
-from ase.units import kJ
-from ase.eos import EquationOfState
-from ase.neb import NEB
-from matplotlib import pyplot as plt
 from ase.build import bulk
+from ase.calculators.emt import EMT
+from ase.eos import EquationOfState
+from ase.io import read
+from ase.io.trajectory import Trajectory
+from ase.neb import NEB, NEBTools
 from ase.optimize import MDMin
+from ase.units import kJ
 from ase.visualize import view
-from ase.neb import NEBTools
+from matplotlib import pyplot as plt
 
 a = 3.6  # approximate lattice constant
 b = a / 2
@@ -110,6 +109,7 @@ with open("master.xyz", "w") as outfile:
             outfile.write(infile.read())
 ## add in fcc111 surfaces of different sizes in training data
 from ase.build import fcc111
+
 slab = fcc111('Cu', size=(3,3,3), vacuum=10.0)
 sname = "fcc11_3_3_3_vac10"
 
