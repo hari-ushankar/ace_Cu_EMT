@@ -1,0 +1,127 @@
+LAMMPS (22 Dec 2022)
+units 	metal
+dimension 	3
+boundary 	p p p
+atom_style 	atomic
+read_data 	bulk2.lmp
+Reading data file ...
+  orthogonal box = (0 0 0) to (4.1 4.1 4.1)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  4 atoms
+  read_data CPU = 0.000 seconds
+include 	potential.inp
+pair_style eam/alloy
+pair_coeff * * Cu.eam.alloy Cu
+variable dumptime 	equal 100
+variable thermotime 	equal 100
+min_style 	cg
+
+compute energy all pe/atom
+dump 1 	all custom ${dumptime} dump.out id type element xsu ysu zsu fx fy fz
+dump 1 	all custom 100 dump.out id type element xsu ysu zsu fx fy fz
+dump 4 	all custom ${dumptime} dump.cfg id type element x y z fx fy fz c_energy
+dump 4 	all custom 100 dump.cfg id type element x y z fx fy fz c_energy
+dump 5 	all custom ${dumptime} lmp_dump.xyz id type element x y z fx fy fz c_energy
+dump 5 	all custom 100 lmp_dump.xyz id type element x y z fx fy fz c_energy
+dump_modify 5 sort id element Cu
+dump_modify 4 sort id element Cu
+dump_modify 1 sort id format line "%d %d %s %20.15g %20.15g %20.15g %20.15g %20.15g %20.15g %20.15g"
+dump_modify 1 element Cu
+
+
+#dump 2 all custom ${dumptime} dump_e_atom.out id type xsu ysu zsu c_peratom
+#dump_modify 2 sort id format line "%d %d %20.15g %20.15g %20.15g %20.15g"
+
+dump 3 all custom 100 dump3_*.out id type x y z
+dump_modify 3 sort id
+
+thermo_style 	custom step temp pe etotal pxx pxy pxz pyy pyz pzz vol
+thermo_modify 	format float %20.15g
+thermo 	${thermotime}
+thermo 	100
+#fix         br all box/relax x 10. y 10. z 10.
+minimize 	0.0 0.0001 100000 10000000
+Neighbor list info ...
+  update: every = 1 steps, delay = 0 steps, check = yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 7.506786
+  ghost atom cutoff = 7.506786
+  binsize = 3.753393, bins = 2 2 2
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair eam/alloy, perpetual
+      attributes: half, newton on
+      pair build: half/bin/atomonly/newton
+      stencil: half/bin/3d
+      bin: standard
+Per MPI rank memory allocation (min/avg/max) = 9.586 | 9.586 | 9.586 Mbytes
+   Step          Temp          PotEng         TotEng          Pxx            Pxy            Pxz            Pyy            Pyz            Pzz           Volume    
+         0                     0     -11.982029964559     -11.982029964559    -202827.962137943 -9.27506323265654e-13 -4.21410481657656e-12    -202827.962137943 -3.54871984553816e-12    -202827.962137944               68.921
+         1                     0     -11.982029964559     -11.982029964559    -202827.962137943 -9.27506323265654e-13 -4.21410481657656e-12    -202827.962137943 -3.54871984553816e-12    -202827.962137944               68.921
+Loop time of 0.000195414 on 1 procs for 1 steps with 4 atoms
+
+96.7% CPU use with 1 MPI tasks x no OpenMP threads
+
+Minimization stats:
+  Stopping criterion = quadratic factors are zero
+  Energy initial, next-to-last, final = 
+      -11.982029964559   -11.982029964559   -11.982029964559
+  Force two-norm initial, final = 2.4312871e-16 2.4312871e-16
+  Force max component initial, final = 2.2074356e-16 2.2074356e-16
+  Final line search alpha, max atom move = 1 2.2074356e-16
+  Iterations, force evaluations = 1 2
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 3.0684e-05 | 3.0684e-05 | 3.0684e-05 |   0.0 | 15.70
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 1.009e-05  | 1.009e-05  | 1.009e-05  |   0.0 |  5.16
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 0.0001546  |            |       | 79.13
+
+Nlocal:              4 ave           4 max           4 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:            360 ave         360 max         360 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:            172 ave         172 max         172 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 172
+Ave neighs/atom = 43
+Neighbor list builds = 0
+Dangerous builds = 0
+#unfix		br
+run 0
+WARNING: No fixes with time integration, atoms won't move (../verlet.cpp:60)
+Per MPI rank memory allocation (min/avg/max) = 8.461 | 8.461 | 8.461 Mbytes
+   Step          Temp          PotEng         TotEng          Pxx            Pxy            Pxz            Pyy            Pyz            Pzz           Volume    
+         1                     0     -11.982029964559     -11.982029964559    -202827.962137943 -9.27506323265654e-13 -4.21410481657656e-12    -202827.962137943 -3.54871984553816e-12    -202827.962137944               68.921
+Loop time of 1.984e-06 on 1 procs for 0 steps with 4 atoms
+
+151.2% CPU use with 1 MPI tasks x no OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0          | 0          | 0          |   0.0 |  0.00
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0          | 0          | 0          |   0.0 |  0.00
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 1.984e-06  |            |       |100.00
+
+Nlocal:              4 ave           4 max           4 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:            360 ave         360 max         360 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:            172 ave         172 max         172 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 172
+Ave neighs/atom = 43
+Neighbor list builds = 0
+Dangerous builds = 0
+
+Total wall time: 0:00:00
